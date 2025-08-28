@@ -256,3 +256,4 @@ class H1_2Retargeter(RetargeterBase):
         usd_right_roll_link_in_world_quat = PoseUtils.quat_from_matrix(usd_right_roll_link_in_world_mat)
 
         return np.concatenate([usd_right_roll_link_in_world_pos, usd_right_roll_link_in_world_quat])
+

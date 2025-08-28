@@ -73,3 +73,4 @@ class PickPlaceH1_2EnvCfg(PickPlaceBaseEnvCfg):
         # This should match the output of the H1_2Retargeter
         # 7 (left wrist) + 7 (right wrist) + hand_joints + arm_joints
         self.actions.pink_ik_cfg.action_space = 14 + len(self.actions.pink_ik_cfg.hand_joint_names) + 8  # 8 arm joints
+
