@@ -12,6 +12,7 @@ from . import (
     nutpour_gr1t2_pink_ik_env_cfg,
     pickplace_gr1t2_env_cfg,
     pickplace_gr1t2_waist_enabled_env_cfg,
+    pickplace_h1_2_env_cfg,
 )
 
 gym.register(
@@ -40,6 +41,16 @@ gym.register(
     kwargs={
         "env_cfg_entry_point": exhaustpipe_gr1t2_pink_ik_env_cfg.ExhaustPipeGR1T2PinkIKEnvCfg,
         "robomimic_bc_cfg_entry_point": os.path.join(agents.__path__[0], "robomimic/bc_rnn_image_exhaust_pipe.json"),
+    },
+    disable_env_checker=True,
+)
+
+gym.register(
+    id="Isaac-PickPlace-H1_2-Abs-v0",
+    entry_point="isaaclab.envs:ManagerBasedRLEnv",
+    kwargs={
+        "env_cfg_entry_point": pickplace_h1_2_env_cfg.PickPlaceH1_2EnvCfg,
+        "robomimic_bc_cfg_entry_point": os.path.join(agents.__path__[0], "robomimic/bc_rnn_low_dim.json"),
     },
     disable_env_checker=True,
 )
